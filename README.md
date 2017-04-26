@@ -4,8 +4,7 @@ When you run `app/Main.hs` with ghci, Graphviz preview diagram will appear, whic
 
 ![preview](https://raw.githubusercontent.com/kyagrd/hs-partition-example/master/preview.png)
 
-Hakcage page of the data-parition library is
-https://hackage.haskell.org/package/data-partition
-
-Hackage page of the Functional Graph Library (FGL) is
-https://hackage.haskell.org/package/fgl
+Hackage pages of the libraries used
+ * data-parition https://hackage.haskell.org/package/data-partition
+ * fgl https://hackage.haskell.org/package/fgl
+ * graphviz https://hackage.haskell.org/package/graphviz
