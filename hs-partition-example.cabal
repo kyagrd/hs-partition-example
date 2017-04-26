@@ -27,6 +27,8 @@ executable hs-partition-example-exe
                      , hs-partition-example
                      , data-partition
                      , containers
+                     , fgl
+                     , graphviz
   default-language:    Haskell2010
 
 test-suite hs-partition-example-test
