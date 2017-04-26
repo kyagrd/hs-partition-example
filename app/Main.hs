@@ -69,7 +69,8 @@ joinPairs (x:xs) = [(x,y) | y<-xs] ++ joinPairs xs
 
 type M t = NodeMapM (Partition Int) (Int,Int) Gr t
 
--- join the partition containging i and the partition continaing j
+-- join the equiv. class containging i and the equiv. class continaing j
+-- in a partition and add that new partition to the nodemap and the graph
 addJoinFrom :: Partition Int -> (Int,Int) -> M (LNode (Partition Int))
 addJoinFrom p (i,j) = do
   ln <- insMapNodeM p'
@@ -77,16 +78,16 @@ addJoinFrom p (i,j) = do
   return ln
   where p' = joinElems i j p
 
--- generate all possible partitions from p by a single join pair
--- and add them to the graph and nodemap
--- join pairs are generated from representative elem of each partition
+-- generate all possible partitions from p by a single join pair, where
+-- join pairs are generated from representative elem of each equiv. calss in p,
+-- and add each of the parition to the nodemap and the graph
 addFrom :: Partition Int -> M [LNode (Partition Int)]
 addFrom p = do
   lnodes <- mapM (addJoinFrom p) $ joinPairs (nub $ map (rep p) [0..maxVal])
   return $ nubBy (\x y -> fst x == fst y) lnodes
 
 -- repeatedly apply addFrom to newly geneated partitions
--- until there are no more partitions to generate
+-- until there are no more new partitions to generate
 addFromFix :: Partition Int -> M ()
 addFromFix p = do
   lnodes <- addFrom p
