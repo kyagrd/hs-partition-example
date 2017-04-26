@@ -4,7 +4,7 @@ When you run the `main` function in `app/Main.hs` with ghci, Graphviz preview di
 
 ![preview](https://raw.githubusercontent.com/kyagrd/hs-partition-example/master/preview.png)
 
-Trivial partitions of singleton sets are omitted. That is the top node `[]` means `[[0],[1],[2],[3]]`.
+Trivial partitions of singleton sets are omitted. That is, the top node `[]` really means `[[0],[1],[2],[3]]`.
 
 Hackage pages of the libraries used
  * data-parition https://hackage.haskell.org/package/data-partition
