@@ -11,3 +11,5 @@ Hackage pages of the libraries used
  * data-parition https://hackage.haskell.org/package/data-partition
  * fgl https://hackage.haskell.org/package/fgl
  * graphviz https://hackage.haskell.org/package/graphviz
+
+WARNING: Space complexity grows really fast. Preview works up to size 5 but at size 6 is two large for an image. From 7 it requires huge amount of memory and likely to segfault even before generating the preview.
